@@ -1,0 +1,12 @@
+#!/bin/bash
+
+session_name=cyclone
+
+if ! tmux ls | grep ^$session_name &>/dev/null ; then
+        # start a new session
+        tmux -2 -u new -s $session_name
+else
+        # get the session and attach to it
+        tmux -2 -u attach -d -t $session_name
+fi
+
