@@ -1,6 +1,6 @@
 #!/bin/bash
 
-session_name=cyclone
+session_name=${1:-cyclone}
 
 if ! tmux ls | grep ^$session_name &>/dev/null ; then
         # start a new session
